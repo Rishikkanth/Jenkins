@@ -1,8 +1,10 @@
-node("myAgent") {
-    timeout(unit: 'SECONDS', time: 5) {
-        stage("One"){
-            sleep 10
-            echo 'Hello Rishi24268'
-        }
+pipeline{
+  agent any
+  stages{
+    stage{'sample'} {
+      steps {
+        echo 'Hello Rishi24268'
+      }
     }
+  }
 }
