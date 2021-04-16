@@ -2,7 +2,7 @@ node("myAgent") {
     timeout(unit: 'SECONDS', time: 5) {
         stage("One"){
             sleep 10
-            echo 'Hello Rishi'
+            echo 'Hello Rishi24268'
         }
     }
 }
