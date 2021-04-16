@@ -5,8 +5,8 @@ pipeline {
      }
    }
 
-   environment {
-     CREDS = credentials('CENTOS')
+  environment {
+    CREDS = credentials('CENTOS')
    }
 
    stages {
