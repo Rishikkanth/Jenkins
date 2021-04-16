@@ -1,6 +1,10 @@
 pipeline {
-  agent any  
-  stages {
+  agent {
+    node {
+      label 'workstation' 
+     }
+   }
+   stages {
 
     stage('stage1') {
       steps {
