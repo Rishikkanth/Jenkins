@@ -5,7 +5,7 @@ pipeline {
      }
    }
 
-   environments {
+   environment {
      CREDS = credentials('CENTOS')
    }
 
