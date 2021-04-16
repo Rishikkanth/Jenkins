@@ -11,5 +11,7 @@ pipeline {
         stage('stage2') {
       steps {
         sh 'echo Jenkins pipeline stage2'
+      }
+    }
   }
 }
