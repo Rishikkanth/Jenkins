@@ -1,0 +1,61 @@
+// Jenkinsfile
+
+
+
+declarative pipeline{
+
+---<All Pipeline blocks go here>---
+
+    agent any/node{
+        Labels, nodes
+    }
+
+    options {
+        buildDiscarder logRotator( 
+            xyz
+        )
+    }
+
+    tools {
+
+        nodejs 'node'
+    }
+
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+
+        choice(name: 'ENV', choices: ['dev', 'qa', 'prod'], description: 'Pick emv')
+
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+    }
+
+    environment {
+        a = "date", cred = credentials "centos"
+    }
+    stages {
+        stage(stage_name) {
+            sh '_cmd_'
+        }
+        stage(stage_name) {
+            sh '_cmd_'
+        }
+    }
+    post (
+        conditions [always, changed, fixed, regression, aborted, failure, success, unstable, unsuccessful, cleanup] {
+
+        }
+        )
+}
+
+// flow -> (stage & pipe level) Directives - environment - 
+// scm:source control managment
+// triggers: when to trigger the job
+// pollscm: As of any changes happen in git. Jenkins will trigger the job
+// cron: To run builds for schedule time  
+// Upstream: After execution of one trigger parallely to execute other build.
+// parameters: Input to builds, to access variables
+// tools: ->global text configuration 
