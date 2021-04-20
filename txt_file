@@ -51,7 +51,9 @@ declarative pipeline{
         )
 }
 
-// flow -> (stage & pipe level) Directives - environment - 
+// it is a domain specific language based on groovy.
+ 
+//flow -> (stage & pipe level) Directives - environment - 
 // scm:source control managment
 // triggers: when to trigger the job
 // pollscm: As of any changes happen in git. Jenkins will trigger the job
@@ -59,3 +61,29 @@ declarative pipeline{
 // Upstream: After execution of one trigger parallely to execute other build.
 // parameters: Input to builds, to access variables
 // tools: ->global text configuration 
+// 
+// conditions
+// when: 
+// anyoff:
+// all off:
+// before: beforeOptions true ()
+// input:
+// option:
+// lock: -> lock Label: 
+
+// jenkins will run in sequestial stages (stage1 {stagea{} stageb{}} stage2 {stagea{} stageb{}})
+
+// triggers:
+
+// scmtrigger- if there is any change in repository 
+// time trigger- For schedule time
+// upstream cause - it is been triggered by other upstream
+// cause : If a build is triggered by userIdCause(specific user)
+
+
+// Parallel stage: but in parallel jenkins runs both 
+// the stages in parallel
+
+// Sequential stage: default jenkins run the stages in sequential 
+
+// Matrix: looping is called Matrix in jenkins. we need to install puglin Matrix combinations.
